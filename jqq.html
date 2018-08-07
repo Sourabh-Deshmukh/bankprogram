@@ -1,0 +1,36 @@
+<html>
+   <head>
+      <title>The jQuery Example</title>
+      <script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+      </script>
+		
+      <script type = "text/javascript" language = "javascript">
+         $(document).ready(function() {
+            var title = $("em").attr("title");
+            $("#divid").text(title);
+                 $("#myimg").attr("src", "images.jpeg");
+         
+                 $("#sou").addClass("highlight");
+
+
+         });
+      </script>
+ <style>
+         .selected { color:red; }
+         .highlight { background:yellow; }
+</style> 
+
+   </head>
+	
+   <body>
+      <div>
+         <em title = "Bold and Brave">This is first paragraph.</em>
+         <p id = "myid">This is second paragraph.</p>
+         <div id = "divid"></div>
+      </div>
+
+          <img id = "myimg" src = "download.jpeg" alt = "Sample image" />
+     <p id="sou">hello dear change it</p>
+   </body>
+</html>

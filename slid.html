@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  img{
+    padding: 25px;
+  }
+  span{
+    display: inline-block;
+  }
+</style>
+  <script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+       </script>
+
+      <script type="text/javascript">
+   $(document).ready(function(){
+
+    $("#btn1").click(function(){
+        
+
+        var img = document.createElement("img");
+        var p= document.createElement("p");
+
+        var x = document.getElementsByClassName("mySlides");
+        var y=  document.getElementsByClassName("ss");
+        for (i = 0; i < x.length; i++) {
+        if(x[i].style.display == "block"){
+        img.src=x[i].src;
+       document.body.appendChild(img);
+
+       }  
+       if(y[i].style.display == "block"){
+          $("html").append("<p><span>"+y[i].textContent+"</span></p>");
+       }
+           
+           }
+
+
+
+
+       //document.body.appendChild(p);
+       //var str= $(".ss").html();
+       //$("p").append(str);
+
+    });  
+});
+</script>
+</head>
+<body>
+<div style="max-width:500px">
+  <img class="mySlides" src="d1.jpeg" style="width:100%">
+  <img class="mySlides" src="d2.jpeg" style="width:100%">
+  <img class="mySlides" src="d3.jpeg" style="width:100%">
+  <img class="mySlides" src="d4.jpeg" style="width:100%">
+  <img class="mySlides" src="d5.jpeg" style="width:100%">
+  <img class="mySlides" src="d6.jpeg" style="width:100%">
+  <img class="mySlides" src="d7.jpeg" style="width:100%">
+  <img class="mySlides" src="d8.jpeg" style="width:100%">
+  <img class="mySlides" src="d9.jpeg" style="width:100%">
+  <img class="mySlides" src="d10.jpeg" style="width:100%">
+  <p class="ss">1</p>
+  <p class="ss">2</p>
+  <p class="ss">3</p>
+  <p class="ss">4</p>
+  <p class="ss">5</p>
+  <p class="ss">6</p>
+  <p class="ss">7</p>
+  <p class="ss">8</p>
+  <p class="ss">9</p>
+  <p class="ss">10</p>
+</div>
+<br />
+
+<script>
+var myIndex = 0;
+var a=0;
+show();
+
+function show() {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    var y=  document.getElementsByClassName("ss");
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";  
+       y[i].style.display = "none";
+           
+           }
+    myIndex++;
+    a++;
+    if (myIndex > x.length) {myIndex = 1}    
+    if (a > y.length) {a = 1}    
+    
+    x[myIndex-1].style.display = "block";  
+    y[a-1].style.display = "block";  
+    setTimeout(show, 2000); }
+</script>
+<button id="btn1">Click</button><br />
+</body>
+</html>

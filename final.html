@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>no</title>
+    <style>
+  img{
+    padding: 25px;
+  }
+  span{
+    display: inline-block;
+    
+  }
+</style>
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+</head>
+<body>
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+
+var lis = ["d1.jpeg", "d2.jpeg", "d3.jpeg","d4.jpeg","d5.jpeg","d6.jpeg","d7.jpeg","d8.jpeg",
+"d9.jpeg","d10.jpeg"];
+
+
+var curentImage = 0;
+
+
+var timeout = setInterval(function(){
+            $("#imagen").attr("src", getNextImg());
+            $("#numm").text(""+curentImage);
+        }, 2000);
+
+ function getNextImg(){
+    var url = lis[curentImage];
+    if(lis[curentImage]){   
+    curentImage++;
+    } else{
+    curentImage = 0;
+    url = lis[curentImage];
+    curentImage++;
+    }
+    return url;
+ }
+
+
+ $("#buuu").click(function(){
+         var img = document.createElement("img");
+         img.src = lis[curentImage-1];
+         document.body.appendChild(img).append("<p><span>"+curentImage+"</span></p>");
+         $("html").append("<p><span>"+curentImage+"</span></p>");
+});
+    });
+
+	</script>
+<div id="p"></div>
+<img id="imagen" width="100px" height="100px"></div>
+<p id="numm"></p>
+    <button id="buuu">Add me</button><br />
+
+</body>
+</html>

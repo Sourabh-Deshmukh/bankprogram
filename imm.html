@@ -1,0 +1,38 @@
+<html>
+<head>
+    <script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+      </script>
+    
+      <script type = "text/javascript" language = "javascript">
+        
+        $(document).ready(function(){
+
+      var imagess = ["d1.jpeg", "d2.jpeg", "d3.jpeg","d4.jpeg","d5.jpeg","d6.jpeg","d7.jpeg",
+      "d8.jpeg","d9.jpeg","d10.jpeg",];
+      var i=1,j;
+    
+       $("#myimg").delay(2000);    
+                  
+     
+                for(i=1;i<=9;i++){
+                   
+                  $("#myimg").hide(500).delay(500);
+                  $("#myimg").attr("src", imagess[i]).delay(500);
+                  $("#num").text(i);
+                  $("#myimg").show(500).delay(500);
+                  $("#myimg").delay(2000);    
+                  }
+    
+    
+    
+
+});
+</script>
+</head>
+<body>
+  <img id="myimg" src="d1.jpeg"></img><br/>
+  <p id="num">1</p><br /><br /><br />
+  <button>Click</button>
+</body>
+</html>
